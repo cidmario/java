@@ -20,15 +20,13 @@ public class Array {
 		System.out.println("O valor pesquisado está na posição: " + pos); //retorna a posicao / retornou um numero negativo
 
 
-
-//		//Outra forma de inicializar um array:
-//		int [] numeros = new int [5];
-//		numeros[0] =1;
-//		numeros[1] =2;
-//		numeros[2] =3;
-//		numeros[3] =4;
-//		numeros[4] =5;
-//		System.out.println("Numeros: "+numeros[0]);
+		//Outra forma de inicializar um array:
+		int [] numeros = new int [5];
+		numeros[0] =1;
+		numeros[1] =2;
+		numeros[2] =3;
+		numeros[3] =4;
+		numeros[4] =5;
+		System.out.println("Numeros: "+numeros[0]);
 	}
-
 }
