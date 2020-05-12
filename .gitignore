@@ -1,0 +1,9 @@
+#Ignorar arquivos desnecessários:
+
+.idea/
+.gitignore.swp
+Documentos.iml
+java.iml
+pom.xml
+.class
+target/
