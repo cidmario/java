@@ -1,4 +1,4 @@
-package aulas;
+package aulas.operadores;
 import javax.swing.JOptionPane;
 public class IMC {
 	// IMC= pesoEmQuiloGramas / (alturaEmMetros * alturaEmMetros)
