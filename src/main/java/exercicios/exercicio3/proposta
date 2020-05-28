@@ -1,0 +1,22 @@
+Crie um programa que receba um número do usuário obrigatóriamente entre 3 e 10 que será usado como quantidade de linhas a ser impressa
+E também receba um outro número entre 0 e 1 para dizer qual será o valor impresso na primeira linha. (se é zero ou se é um).
+Com esses dados o sistema deve imprimir no console uma "pirâmide" de zeros e uns.
+
+ex:
+se o usuário informar 5 como total de linhas e 0 como valor a ser impresso na primeira linha, então o resultado deve ser:
+0
+1-1
+0-0-0
+1-1-1-1
+0-0-0-0-0
+
+se o usuário informar 6 como total de linhas e 1 como valor a ser impresso na primeira linha, então o resultado deve ser:
+1
+0-0
+1-1-1
+0-0-0-0
+1-1-1-1-1
+0-0-0-0-0-0
+
+obs: o sistema deve validar as entradas do usuário de forma que se ele informar um valor inválido para ambos os imputs
+o sistema informe que está errado e espere o usuário informar os valores corretos
