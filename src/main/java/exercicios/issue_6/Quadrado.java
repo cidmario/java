@@ -5,57 +5,59 @@ import java.util.Scanner;
 
 public class Quadrado {
 
-	static Scanner s = new Scanner(System.in);
-	static String solicitarIntevalo = "Será impresso o quadrado dos numeros de 15 a 200. \n" +
-			"Deseja informar outro intervalo? (Sim/Não)";
-	static String parada = "Deseja continuar ? (Responda Sim/Não)";
-
 	public static void main(String[] args) {
-		quadrado();
-	}
+		//variaveis que serão utilizadas ao longo do método main
+		final Scanner scanner = new Scanner(System.in);
+		final String definirIntervalo = "Será impresso o quadrado dos numeros de 15 a 200. \n" +
+				"Deseja definir outro intervalo? (Sim/Não)";
 
-	static void quadrado() {
+		int inicioIntervalo = 15;
+		int fimIntervalo = 200;
 
-		System.out.println(solicitarIntevalo);
-		String resp1 = s.nextLine();
+		System.out.println("\n>>>>>>>>>>>>>> INICIANDO >>>>>>>>>>>>>>\n");
 
-		validarRespostaDoUsuario(resp1, solicitarIntevalo);
+		//Dá a opção para o usuário definir um intervalo numerico, se ele quiser.
+		System.out.println(definirIntervalo);
+		String respDefinirIntervalo = scanner.nextLine();
 
-		if (resp1.equalsIgnoreCase("sim")) {
-			definirIntevaloPeloUsuario();
-		} else {
-			definirIntervaloPeloSistema();
-		}
-	}
-
-
-	static void definirIntevaloPeloUsuario() {
-		int inicio = 0, fim = 0, quadrado = 0;
-		System.out.println("Usando numeros 'inteiros', informe o 'inicio' do intervalo:");
-		inicio = s.nextInt();
-		System.out.println("Usando numeros 'inteiros', informe o 'fim' do intervalo");
-		fim = s.nextInt();
-		for (int i = inicio; i <= fim; i++) {
-			quadrado = i * i;
-			System.out.println("O valor de " + i + " ao quadado é >> " + quadrado);
-		}
-	}
-
-	static void definirIntervaloPeloSistema() {
-		int quadrado;
-		for (int i = 15; i <= 200; i++) {
-			quadrado = i * i;
-			System.out.println("O valor de " + i + " ao quadado é >> " + quadrado);
-		}
-	}
-
-	static void validarRespostaDoUsuario(String resp, String mensagem) {
-		//validando resposta do usuário
-		for (int i = 0; (!resp.equalsIgnoreCase("sim")) && (!resp.equalsIgnoreCase("não")); i++) {
+		//valida a primeira resposta sobre definir ou não um intervalo
+		while ((!respDefinirIntervalo.equalsIgnoreCase("sim")) && (!respDefinirIntervalo.equalsIgnoreCase("não"))) {
 			System.out.println("Resposta Invalida !");
-			System.out.println(mensagem);
-			resp = s.nextLine();
+			System.out.println( definirIntervalo);
+			respDefinirIntervalo = scanner.nextLine();
+		}
+
+		//Se a resposta for sim, solicita que o usuário informe os limites do intervalo, executa e imprime o resultado.
+		//Se a resposta for não, simplismente executa e imprime o resultado do intervalo definido pelo sistema.
+		if (respDefinirIntervalo.equalsIgnoreCase("sim")) {
+			System.out.println("Usando numeros 'inteiros', informe o 'inicio' do intervalo:");
+			inicioIntervalo = scanner.nextInt();
+			System.out.println("Usando numeros 'inteiros', informe o 'fim' do intervalo");
+			fimIntervalo = scanner.nextInt();
+
+			//Verificando se o intervalo é valido.
+			while (inicioIntervalo > fimIntervalo) {
+				System.out.println("                         ATENÇÃO !!!!\n" +
+						"O Inicio do intervalo deve ser maior que o fim. Ex: 'inicio' = " + fimIntervalo + " e 'fim' = " + inicioIntervalo);
+
+				System.out.println("\n Usando numeros 'inteiros', informe o 'inicio' do intervalo:");
+				inicioIntervalo = scanner.nextInt();
+				System.out.println("\n Usando numeros 'inteiros', informe o 'fim' do intervalo");
+				fimIntervalo = scanner.nextInt();
+			}
+			//executa e imprime o resultado do intervalo informado pelo usuário
+			for (int i = inicioIntervalo; i <= fimIntervalo; i++) {
+				int quadrado = i * i;
+				System.out.println("O valor de " + i + " ao quadado é >> " + quadrado);
+			}
+		} else {
+			//Executa e imprime o resultado definido pelo sistema.
+			for (int i = inicioIntervalo; i <= fimIntervalo; i++) {
+				int quadrado = i * i;
+				System.out.println("O valor de " + i + " ao quadado é >> " + quadrado);
+			}
 		}
 	}
 }
+
 
