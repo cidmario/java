@@ -16,18 +16,20 @@ public class MaiorMenorNumero {
 
 		for (int i = 1; i <= numeros; i++) {
 			int numerosAleatorios = gerarNumeros.nextInt(200) - 50;
-			//Armazena o primeiro numero como maior e menor, pois sera
+			//Armazena o primeiro numero como maior e menor
 			if (i == 1) {
 				maior = numerosAleatorios;
 				menor = numerosAleatorios;
-			}
-			    //Descobre quem é o maior numero
-			if (numerosAleatorios > maior) {
+
+				//Descobre quem é o maior numero
+			} else if (numerosAleatorios > maior) {
 				maior = numerosAleatorios;
-				//Descrobre o menor numero
-			} else if (numerosAleatorios < menor) {
+			}
+			//Descrobre o menor numero
+			if (numerosAleatorios < menor) {
 				menor = numerosAleatorios;
 			}
+
 
 			System.out.print(numerosAleatorios);
 			System.out.print(" ");
