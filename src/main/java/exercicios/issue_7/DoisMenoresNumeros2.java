@@ -21,7 +21,6 @@ public class DoisMenoresNumeros2 {
 		}
 
 		Arrays.sort(numerosAleatorios); // ordeno do menor para o maior
-
 		System.out.println("Menor: "+numerosAleatorios[0]); // Pego o menor numero
 		System.out.println("Segundo menor: "+numerosAleatorios[1]); //Pego o segundo menor numero
 
